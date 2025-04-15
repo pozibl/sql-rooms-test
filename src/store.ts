@@ -1,8 +1,7 @@
 import {
   createProjectSlice,
-  createProjectStore,
-  ProjectState
-} from '@sqlrooms/project-builder'
+  createProjectStore
+} from '@sqlrooms/project'
 
 import {
   BaseProjectConfig,
@@ -10,6 +9,12 @@ import {
   MAIN_VIEW
 } from '@sqlrooms/project-config'
 import { z } from 'zod'
+
+// Define a fallback ProjectState type if necessary
+type ProjectState<T> = {
+  config: T
+  // Add other properties as needed
+}
 
 // Define panel types
 export const ProjectPanelTypes = z.enum([
